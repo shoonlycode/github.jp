@@ -1,183 +1,345 @@
 body {
   margin: 0;
-  font-family: "Hiragino Kaku Gothic ProN";
-}
-
-a {
-  text-decoration: none;
-}
-
-.container {
-  width: 1170px;
-  padding: 0 15px;
-  margin: 0 auto;
-}
-
-.top-wrapper {
-  padding: 180px 0 100px 0;
-  background-image: url(https://prog-8.com/images/html/advanced/top.png);
-  background-size: cover;
-  color: white;
-  text-align: center;
-}
-
-.top-wrapper h1 {
-  opacity: 0.7;
-  font-size: 45px;
-  letter-spacing: 5px;
-}
-
-.top-wrapper p {
-  opacity: 0.7;
-}
-
-.btn-wrapper {
-  margin: 20px 0;
-}
-
-.btn-wrapper p {
-  margin: 10px 0;
-}
-
-.signup {
-  background-color: #239b76;
-}
-
-.facebook {
-  background-color: #3b5998;
-  margin-right: 10px;
-}
-
-.twitter {
-  background-color: #55acee;
-}
-
-.btn {
-  padding: 8px 24px;
-  color: white;
-  display: inline-block;
-  opacity: 0.8;
-  border-radius: 4px;
-}
-
-.btn:hover {
-  opacity: 1;
-}
-
-.fa {
-  margin-right: 5px;
+  font-family: '游明朝', serif;
+  background-color: #f5f5f5;
+  color: #333;
 }
 
 header {
-  height: 65px;
+  position: fixed;
+  top: 0;
   width: 100%;
-  background-color: rgba(34, 49, 52, 0.9);
-  /* positionプロパティをfixedに、topを0に指定してください */
-  position:fixed;
-  top:0;
-  
-  /* z-indexを10に指定してください */
-  z-index:10;
-}
-
-.logo {
-  width: 124px;
-  margin-top: 20px;
+  height: 5%;
+  background-color: rgb(8, 116, 31);
+  color: #fff;
+  text-align: left;
+  padding: 8px 20px;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; /* 両端配置に変更 */
+  gap: 40px;
 }
 
 .header-left {
-  float: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.header-right {
-  float: right;
-  background-color: rgba(255, 255, 255, 0.3);
-  transition: all 0.5s;
+header h1 {
+  margin: 0 0 2px 0;
+  font-size: 25px;
+  font-weight: bold;
 }
 
-.header-right:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+header p {
+  margin: 0;
+  font-size: 13px;
 }
 
-.header-right a {
-  line-height: 65px;
-  padding: 0 25px;
-  color: white;
-  display: block;
+header.shrink {
+  height: 4%; /* 5% × 0.7 = 3.5% */
+  padding: 4px 10px; /* パディングも少し減らすと自然 */
 }
 
-.lesson-wrapper {
-  height: 500px;
-  padding-bottom: 80px;
-  background-color: #f7f7f7;
+.hero {
+  background-image: url("https://www.kokerium.com/wp-content/themes/kokerium/assets/images/top/key-visual.png");
+  background-size: cover;
+  background-position: center;
+  padding: 200px 0 100px;
   text-align: center;
+  color: rgb(0, 0, 0);
 }
 
-.heading {
-  padding-top: 60px;
-  padding-bottom: 30px;
-  color: #5f5d60;
+.section {
+  text-align: center;
+  background-color: #eef1eb;
+  padding: 80px 20px;
 }
 
-.heading h2 {
-  font-weight: normal;
+.gallery {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px 0;
+  scroll-snap-type: x mandatory;
 }
 
-.lesson {
-  float: left;
-  width: 25%;
+.gallery::-webkit-scrollbar {
+  height: 8px;
+}
+.gallery::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+.gallery::-webkit-scrollbar-track {
+  background: #ccc;
+  border-radius: 10px;
 }
 
-.lesson-icon {
-  position: relative;
+.item {
+  flex: 0 0 auto;
+  width: 250px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  scroll-snap-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.lesson-icon p {
-  position: absolute;
-  top: 90px;
+.item img {
   width: 100%;
-  color: white;
+  border-radius: 8px;
 }
 
-.txt-contents {
-  width: 80%;
+.button {
   display: inline-block;
-  margin-top: 20px;
-  font-size: 12px;
-  color: #b3aeb5;
-}
-
-.heading h3 {
-  font-weight: normal;
-}
-
-.message-wrapper {
-  border-bottom: 1px solid #eee;
-  padding-bottom: 80px;
-  text-align: center;
-}
-
-.message {
-  padding: 15px 40px;
-  background-color: #5dca88;
-  box-shadow: 0 7px #1a7940;
-}
-
-.message:active {
-  position: relative;
-  top: 7px;
-  box-shadow: none;
-}
-
-footer img {
-  width: 125px;
-}
-
-footer p {
-  color: #b3aeb5;
-  font-size: 12px;
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 30px;
 }
 
 footer {
-  padding-top: 30px;
+  background-color: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 30px 10px;
+  font-size: 14px;
+}
+
+.contact-form {
+  background-color: #fff;
+  padding: 40px 20px;
+  margin: 80px auto;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.contact-form h2 {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin: 15px 0 5px;
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  margin-top: 20px;
+  padding: 10px 0;
+  width: 100%; /* ボタンをフォーム幅に合わせる */
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.sns-fixed {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  top: auto;
+  transform: none;
+  z-index: 999;
+  background-color: #f7f7f7;
+  padding: 12px 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sns-fixed a {
+  position: relative;
+  display: block;
+  margin: 10px 0;
+  color: #444;
+  font-size: 24px;
+  text-decoration: none;
+  transition: background 0.2s;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* SNS名の吹き出し */
+.sns-fixed a .sns-label {
+  display: none;
+  position: absolute;
+  right: 110%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #333;
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 15px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, right 0.2s;
+  z-index: 1001;
+}
+
+.sns-fixed a:hover .sns-label,
+.sns-fixed a:focus .sns-label {
+  display: block;
+  opacity: 1;
+  right: 105%;
+}
+
+/* 吹き出しの三角 */
+.sns-fixed a .sns-label::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 8px 0 8px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #333;
+}
+
+/* moss.cssに追記 */
+.external-works {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.external-frame {
+  width: 100%;
+  max-width: 900px;
+  height: 70vw;
+  max-height: 900px;
+  min-height: 400px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: none;
+  margin: 0 auto;
+  display: block;
+}
+
+/* お問い合わせボタンのmargin-leftをリセット */
+.contact-link {
+  background: #fff;
+  color: rgb(8, 116, 31);
+  padding: 8px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 0; /* ← ここを0に */
+  transition: background 0.2s, color 0.2s;
+  font-size: 15px;
+}
+.contact-link:hover {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 0 10px 0;
+}
+
+.slider .item {
+  margin-right: 24px; /* 作品同士の間隔を追加 */
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 16px 12px;
+  min-width: 260px;
+  max-width: 300px;
+  box-sizing: border-box;
+  transition: box-shadow 0.2s;
+}
+.slider .item:last-child {
+  margin-right: 0; /* 最後の作品の右側は余白なし */
+}
+
+/* スライダー矢印ボタンのデザイン改良 */
+.slider-container .prev,
+.slider-container .next {
+  position: fixed; /* 画面の端に固定 */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background: rgba(8, 116, 31, 0.85);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  z-index: 10;
+  outline: none;
+}
+
+.slider-container .prev:hover,
+.slider-container .next:hover {
+  background: #388e3c;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.slider-container .prev {
+  left: 0;
+  position: fixed; /* 画面の端に固定 */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slider-container .next {
+  right: 0;
+  position: fixed; /* 画面の端に固定 */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* スマホなど画面が狭い場合も端に寄せる */
+@media (max-width: 600px) {
+  .slider-container .prev {
+    left: 0;
+    position: fixed;
+    width: 38px;
+    height: 38px;
+    font-size: 1.4rem;
+  }
+  .slider-container .next {
+    right: 0;
+    position: fixed;
+    width: 38px;
+    height: 38px;
+    font-size: 1.4rem;
+  }
 }
